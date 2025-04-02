@@ -11,14 +11,14 @@ typedef struct tagNode {
 } Node;
 
 /* 함수 원형 선언 */
-Node* SSL_CreateNode(ElementType newData);
-void  SSL_DestroyNode(Node* node);
-void  SSL_AppendNode(Node** head, Node* newNode);
-void  SSL_InsertAfter(Node* current, Node* newNode);
-void  SSL_InsertNewHead(Node** head, Node* newHead);
-void  SSL_RemoveNode(Node** head, Node* remove);
+Node* SLL_CreateNode(ElementType newData);
+void  SLL_DestroyNode(Node* node);
+void  SLL_AppendNode(Node** head, Node* newNode);
+void  SLL_InsertAfter(Node* current, Node* newNode);
+void  SLL_InsertNewHead(Node** head, Node* newHead);
+void  SLL_RemoveNode(Node** head, Node* remove);
 Node* SLL_GetNodeAt(Node* Head, int location);
-int   SSL_GetNodeCount(Node* Head);
-
+int   SLL_GetNodeCount(Node* Head);
+void printList(Node** list);
 
 #endif
