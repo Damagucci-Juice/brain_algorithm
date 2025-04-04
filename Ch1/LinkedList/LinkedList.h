@@ -20,5 +20,7 @@ void  SLL_RemoveNode(Node** head, Node* remove);
 Node* SLL_GetNodeAt(Node* Head, int location);
 int   SLL_GetNodeCount(Node* Head);
 void printList(Node** list);
+void  SLL_InsertBefore(Node** head, Node* current, Node* newHead);
+void  SLL_DestoryAllNodes(Node** list);
 
 #endif

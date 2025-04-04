@@ -78,10 +78,33 @@ int SLL_GetNodeCount(Node* head) {
 }
 
 void printList(Node** list) {
-    int count = SLL_GetNodeCount(list);
+    int count = SLL_GetNodeCount(*list);
     Node* current = NULL;
     for (int i = 0; i < count; i++) {
-        current = SLL_GetNodeAt(list, i);
+        current = SLL_GetNodeAt(*list, i);
         printf("List[%d]->%d\n", i, current->data);
+    }
+}
+
+void  SLL_InsertBefore(Node** head, Node* current, Node* newHead) {
+    if (*head == newHead) {
+        SLL_InsertNewHead(head, newHead);
+    } else {
+        Node* pre = *head;
+
+        while(pre != NULL && pre->next != current) {
+            pre = pre->next;
+        }
+        pre->next = newHead;
+        newHead->next = current;
+    }
+}
+
+void  SLL_DestoryAllNodes(Node** list) {
+    Node* current = *list;
+    while(current != NULL) {
+        SLL_RemoveNode(list, current);
+        SLL_DestroyNode(current);
+        current = SLL_GetNodeAt(*list, 0);
     }
 }

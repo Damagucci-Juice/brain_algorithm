@@ -27,11 +27,16 @@ int main(void) {
     current = SLL_GetNodeAt(list, 2);
     newNode = SLL_CreateNode(3000);
     SLL_InsertAfter(current, newNode);
+    newNode = SLL_CreateNode(1000);
+    SLL_InsertBefore(&list, current, newNode);
 
     printList(&list);
-
+    count = SLL_GetNodeCount(list);
     /* 모든 노드를 메모리에서 제거 */
     printf("\n모든 노드를 메모리에서 제거...\n");
 
-    for(i=0; )
+    SLL_DestoryAllNodes(&list);
+    printList(&list);
+
+    return 0;
 }
