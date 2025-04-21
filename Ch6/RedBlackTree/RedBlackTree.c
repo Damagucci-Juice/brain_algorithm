@@ -117,7 +117,7 @@ void RBT_RotateLeft(RBTNode** Root, RBTNode* Parent) {
             Parent->Parent->Right = RightChild;
     }
 
-    RightChild->Right = Parent;
+    RightChild->Left = Parent;
     Parent->Parent = RightChild;
 }
 
@@ -163,6 +163,8 @@ void RBT_RebuildAfterInsert(RBTNode** Root, RBTNode* X) {
             }
         }
     }
+
+    (*Root)->Color = BLACK;
 }
 
 RBTNode* RBT_RemoveNode(RBTNode** Root, ElementType Data) {
